@@ -1,0 +1,671 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="generator" content="PSPad editor, www.pspad.com">
+  <title>AutoMedia 3 Plugin for MyBB 1.8</title>
+<style type="text/css">
+<!--
+ /* Font Definitions */
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+ /* Style Definitions */
+p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p.Normal, li.Normal, div.Normal
+	{mso-style-name:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+@page Section1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+ /* List Definitions */
+@list l0
+	{mso-list-id:708802764;
+	mso-list-type:hybrid;
+	mso-list-template-ids:524603758 67567617 67567619 67567621 67567617 67567619 67567621 67567617 67567619 67567621;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l1
+	{mso-list-id:1068265625;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1703537850 67567631 67567641 67567643 67567631 67567641 67567643 67567631 67567641 67567643;}
+@list l1:level1
+	{mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l1:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2
+	{mso-list-id:1907449403;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-2073785086 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l2:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+</head>
+
+<body link=blue vlink=purple style='tab-interval:36.0pt'>
+<div style="margin-left: 50px;">
+<div class=Section1>
+<a name="_top"></a>
+<h1>Automedia 3 Plugin for MyBB 1.8</h1>
+
+<h2>Documentation</h2>
+
+<p class=Normal></p>
+
+<p class=Normal><b>Author:</b> doylecc ( <a href="http://community.mybb.com/user-14694.html" target="_blank">http://community.mybb.com/user-14694.html</a>)</p>
+
+<p class=Normal><b>Version:</b> 3.0.3 (02-04-2015)</p>
+
+<p class=Normal><b>Homepage:</b> <a href="http://mybbplugins.de.vu" target="_blank">http://mybbplugins.de.vu</a></p>
+
+<p class=Normal><b>Contact:</b> <a href="http://mybbplugins.de.vu" target="_blank">http://mybbplugins.de.vu</a></p>
+
+<p class=Normal></p>
+
+<p class=Normal></p>
+
+<h3>Content</h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_How_do_I">Plugin Description</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Screenshots">Screenshots</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Where_can_I">Installation</a> </li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Why_doesnt_?">Update</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Globale_Einstellungen">Global Settings</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_What_is_?">Module Management</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_When_is_?">User-CP</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_MyCode-Buttons">MyCode-Buttons</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Coding">Module-Generation</a></li>
+ <li class=MsoNormal style='mso-list:l2 level1 lfo3;tab-stops:list 36.0pt'><a
+     href="#_Lizenz">License</a></li>
+</ul>
+
+<p class=MsoNormal><br></p>
+
+<h3><a name="_How_do_I"></a></h3>
+
+<h3>Plugin Description</h3>
+
+<p class=MsoNormal>The AutoMedia Plugin embeds automatically video/audio/flash without need for MyCode tags.
+The plugin recognizes the posted URL and shows the videos/audios. You don't need to insert any MyCode. The plugin utilizes the oEmbed API by including the Embera library and optionally the Embed.ly service.</p>
+
+<p class=MsoNormal>AutoMedia 3 has a modular structure - custom modules for sites can be enabled/disabled, added/removed and updated separately, without updating or disabling the plugin itself.<br><br></p>
+
+<p class=MsoNormal><b>Feature Overview:</b></p>
+
+<p class=MsoNormal>-&gt;Can be enabled/disabled in ACP</p>
+
+<p class=MsoNormal>-&gt;Template edits are applied automatically if one day a new theme is imported or added.<br>
+Additionally, template edits can be reapplied from Plugins overview in ACP (e.g. after reverting your templates) without deactivating the plugin.</p>
+
+<p class=MsoNormal>-&gt;Can be disabled for guests only</p>
+
+<p class=MsoNormal>-&gt;Can be disabled for certain usergroups</p>
+
+<p class=MsoNormal>-&gt;Can be enabled for certain forums only</p>
+
+<p class=MsoNormal>-&gt;Embedding of individual links can be disabled by using MyCode tags [amoff]URL[/amoff].</p>
+
+<p class=MsoNormal>-&gt;By using the [ampl]URL1.mp3|URL2.mp3|URL3.mp3[/ampl] MyCode tags
+MP3 playlists can be created.</p>
+
+<p class=MsoNormal>-&gt;Embedding can be disabled for signatures (default)</p>
+
+<p class=MsoNormal>-&gt;Embedding can be disabled in quotes</p>
+
+<p class=MsoNormal>-&gt;Codebuttons for MyCode can be displayed in editor below textbox.</p>
+
+<p class=MsoNormal>-&gt;Every user can enable/disable embedding in User CP.</p>
+
+<p class=MsoNormal>-&gt;Embeds videos and music from dozens of different websites.</p>
+
+<p class=MsoNormal>-&gt;The embed.ly API Key can be used.</p>
+
+<p class=MsoNormal>-&gt;Documentation available from plugin overview in ACP.</p>
+
+<p class=MsoNormal>-&gt;Embedding of adult video sites can be enabled/disabled.</p>
+
+<p class=MsoNormal>-&gt;Embedding of adult video sites can be enabled/disabled for guests only.</p>
+
+<p class=MsoNormal>-&gt;Permissions for adult videos can be set by usergroups and forums.</p>
+
+<p class=MsoNormal>-&gt;The plugin uses the MyBB cache system to avoid unnecessary database queries.<br><br></p>
+
+<p class=MsoNormal><b>List of supported file types and websites:</b></p>
+
+<p class=MsoNormal>The oEmbed API supports many websites (Embera about 65 and embed.ly about 250). See <a href="https://github.com/mpratt/Embera/blob/master/PROVIDERS.md" title="Embera" target="_blank">Embera Providers list</a> and <a href="http://embed.ly/embed/features/providers" title="embed.ly" target="_blank">embed.ly Providers List</a> for more details.</p>
+
+<p class=MsoNormal>Additionally the included Mediaelement HTML5 player, Flowplayer and MP3 player let you embed different file types. e.g.:</p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal># MP3/M4A/WAV/OGG audio and MP3 Playlist</p>
+
+<p class=MsoNormal># MP4/M4V/MP4V/OGV/WEBM video</p>
+
+<p class=MsoNormal># FLV Flash video</p>
+
+<p class=MsoNormal># SWF Flash</p>
+
+<p class=MsoNormal># DivX video</p>
+
+<p class=MsoNormal># AVI video</p>
+
+<p class=MsoNormal># MKV video</p>
+
+<p class=MsoNormal># MOV Quicktime video</p>
+
+<p class=MsoNormal># RM/RAM/SMIL/RV/RPM Real media</p>
+
+<p class=MsoNormal># WMV/WMA Windows media</p>
+
+<p class=MsoNormal># MPG/MPEG video</p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal>Please note that you need to have all necessary plugins/addons installed in your webbrowser to play all media file types!<br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal># 12 different adult video websites are currently supported (deactivated by default)</p>
+
+<p class=MsoNormal><br><br></p>
+
+<p class=MsoNormal><b>cURL and fsockopen support:</b></p>
+
+<p class=MsoNormal>If cURL or fsockopen isn't supported on your server media from most sites can't be shown.</p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Screenshots"></a></h3>
+
+<h3>Screenshots</h3>
+
+<p class=MsoNormal>Screenshots, news, updates and the latest modules are available at:</p>
+
+<p class=MsoNormal><a href="https://github.com/doylecc/AutoMedia"
+target="_blank">https://github.com/doylecc/AutoMedia</a></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Where_can_I"></a><a name="_Installation"></a></h3>
+
+<h3>Installation</h3>
+
+<ol>
+<li class=MsoNormal>Upload the complete content of the Upload folder into your forum home directory.<br>
+(For additional languages you have to upload the language files too.)</li>
+
+<li class=MsoNormal>Go to your &quot;AdminCP Configuration - Plugins&quot; and click &quot;Install &amp; Activate&quot; behind AutoMedia</li>
+
+<li class=MsoNormal>After the activation you'll find a new settinggroup &quot;AutoMedia Global&quot; in &quot;ACP - Configuration - Settings&quot;.<br>
+Here you can generally enable/disable embedding without losing your settings.<br>
+
+You can disable embedding for guests only.<br>
+
+You can disable embedding for different usergroup(s).<br>
+
+Embedding can be enabled for certain forums only.<br>
+
+Embedding of adult videos can be enabled (disabled by default).<br>
+
+Embedding of adult videos can be disabled for guests only.<br>
+
+Permissions for adult videos can be set by usergroups and forums.<br>
+
+Embedding can be disabled in signatures (default).<br>
+
+Permissions can be set for embedding of flash files (admins only)(admins, supermods, mods)(all users).<br>
+
+Width and height of embedded media can be set.<br>
+
+Embera library can be (de)activated.<br>
+
+Embed.ly can be used with a valid API key.<br>
+
+Codebuttons can be enabled/disabled for MyCode.<br>
+
+Embedding can be disabled in quotes.</li>
+
+<li class=MsoNormal>Adds an own admin permission.</li>
+
+<li class=MsoNormal>In &quot;ACP - Tools &amp; Maintenance&quot; a new menu item &quot;AutoMedia&quot; is added, where you can view and manage the installed modules for all supported sites and file types.<br>
+
+You can enable/disable embedding for every single mediasite and file type. (all are enabled by default)</li>
+
+<li class=MsoNormal>The plugin adds a new menu item &quot;AutoMedia&quot; in &quot;User CP&quot;. In &quot;AutoMedia&quot; a select box is shown. Every user can set whether he wants embedding enabled (Yes (default)) or disabled (No).
+If he chooses "No" he will only see the links in posts instead the embedded videos/audios and in his own posts only links will be shown to all users.</li>
+
+<li class=MsoNormal>All done.</li>
+</ol>
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Why_doesnt_?"></a></h3>
+
+<h3>Update</h3>
+
+<p class=MsoNormal>Update from version 3.0:</p>
+<ol>
+<li class=MsoNormal>Upload the complete content of the Upload folder into your forum home directory and overwrite the existing files.</li>
+
+<li>In ACP -> Configuration -> Plugins deactivate AutoMedia and activate it again.</li>
+
+<li>In ACP -> Templates & Style -> Templates -> run Find Updated Templates. If there are any automedia templates listed, revert them (and possibly reinsert your own code.)</li>
+
+<li class=MsoNormal>All done.</li>
+</ol>
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal>Update from all older versions:</p>
+<ol>
+<li class=MsoNormal>Deinstall the old AutoMedia plugin.</li>
+
+<li class=MsoNormal>Upload the complete content of the Upload folder into your forum home directory and overwrite the existing files.<br>
+(You can delete the old &quot;mediaplayer&quot; folder in the forum home directory.)<br>
+For additional languages you have to upload new language files too.</li>
+
+<li class=MsoNormal>see &quot;Installation&quot; beginning with #2</li>
+</ol>
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Who_is_?"></a><a name="_Globale_Einstellungen"></a></h3>
+
+<h3>Global Settings</h3>
+
+<p class=MsoNormal>In &quot;ACP - Configuration - AutoMedia Global&quot; you can see the following 20 settings:</p>
+
+<p class=MsoNormal><br></p>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Enable AutoMedia for AutoMedia Sites? - Here you can completely activate/deactivate the automatic embedding.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Enable AutoMedia
+     for Guests? - Here you can disable the automatic embedding for Guests.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Disallow AutoMedia
+     for the following Usergroups: - Here you can disable the automatic embedding for certain usergroups (id's separated by comma).</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Show AutoMedia
+     in following Forums only: - Here you can insert the id&#39;s of the forums (id&#39;s separated by comma, 0 = all forums) where automatic embedding shall be activated.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Enable Embedding of Adult Sites? - Here you can enable/disable the automatic embedding of adult site videos (special modules).
+     (deactivated by default) - Notice: Adult Sites (special) modules in Module Management are only visible if embedding of adult sites  is enabled.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Enable Adult Site Videos for Guests? - Here you can disable the automatic embedding of adult site videos for guests.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Allow Adult Site Videos for the following Usergroups: - Here you can enable the automatic embedding of adult site videos for certain usergroups (id's separated by comma).</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Allow Adult Site Videos for the following Forums only: - Here you can insert the id&#39;s of the forums (id&#39;s separated by comma, 0 = all forums) where automatic embedding of adult site videos shall be activated.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Enable AutoMedia for &quot;AutoMedia Sites&quot; in Signatures? - Here you can enable/disable the automatic embedding in signatures (disabled by default.)</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Permissions for embedding of flash files - Here you can set the permissions for who is allowed to embed flash files (FLV and SWF) in post. There are 3
+     options: a: Admins only, b: Admins, Supermoderators and
+     Moderators and c: all users (default).</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Max. width of
+     shown media files. - Here you can set the width (in pixels) for the embedded files.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Max. height of
+     shown files. - Here you can set the height (in pixels) for the embedded files.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Use Embera oEmbed library. (default)</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Use Embed.ly service. (Embedly and Embera can be used together)</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Insert Embed.ly API key.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Embed Embed.ly media immediately or after clicking a button or as a modal popup.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Let Embed.ly display previews of linked websites.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Display Embed.ly media as Embedly-Cards.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>Show Codebuttons
+     for MP3 Playlist and Deactivation MyCodes - if set to &quot;Yes&quot; the codebuttons for inserting the [amoff]-MyCode (disabling the embedding for individual links) and the [ampl]-MyCode (for creating a MP3 playlist) are displayed for the users below the editors message text box.</li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo6;tab-stops:list 36.0pt'>AutoMedia in Quotes? - Here you can enable/disable the automatic embedding in quotes.</li>
+</ol>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_What_is_?"></a></h3>
+
+<h3>Module Management</h3>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>In &quot;ACP - Tools &amp; Maintenance&quot; you can find the menu item &quot;AutoMedia&quot;</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>It leads to the Module Management of AutoMedia.</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>Here you can see an overview of all available custom modules (Manage installed
+     AutoMedia custom modules.)</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>If embedding of Adult Sites is enabled in the global plugin settings an additional tab is visible. (Installed
+     Adult Sites modules.)</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>The overview lists all custom modules that are located in the module-folder &quot;inc/plugins/automedia/mediasites/&quot; as PHP files. (The module-folder
+     for adult site videos (special modules) is &quot;inc/plugins/automedia/special/&quot;.)</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>The 1.
+     column lists the serial number. <br>
+     The 2. column lists the name of the module. If you click on the name, you can view the code of the module. <br>
+     The 3. column shows the status of the module. A green framed happy smiley signals: the module is activated and a red framed sad smiley signals: the module is deactivated.<br>
+     In the 4th column every module can be activated (if it's currently not active) or deactivated (if it's currently active) The options are additionally highlighted by different colors. <br>
+     Below the table you can find a button (Activate all). By clicking the button all modules will be activated at once.</li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>The Module Management for adult site videos (special modules) works the same way in it's own tab.</li>
+</ul>
+
+<p class=MsoNormal><br></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>New modules can be added by uploading the module's PHP file
+    into the respective module-folder (site modules into &quot;inc/plugins/automedia/mediasites/&quot; and special modules into &quot;inc/plugins/automedia/special/&quot;)
+     via FTP, file manager, SSH etc. <br>
+     After that go to the AutoMedia Module Management in ACP - the new modules are listed in the overview as not activated. Click to activate them.</li>
+</ul>
+
+<p class=MsoNormal><br></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>Modules
+     can get removed completely in two steps. <br>
+     1. Deactivate them in the AutoMedia Module Management in ACP.<br>
+     2. After that delete the module's PHP file via FTP, file manager, SSH etc. from the respective module-folder (site modules from &quot;inc/plugins/automedia/mediasites/&quot; and special modules from &quot;inc/plugins/automedia/special/&quot;).</li>
+</ul>
+
+<p class=MsoNormal><br></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>For adding, removing, updating modules, the plugin itself doesn't need to get deactivated or updated.</li>
+</ul>
+
+<p class=Normal></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_When_is_?"></a></h3>
+
+<h3>User-CP</h3>
+
+<p class=MsoNormal>In User-CP you'll find the menu item &quot;AutoMedia.&quot; Here the user can enable/disable the automatic embedding.
+On the right part of the table a status icon is shown. </p>
+
+<p class=MsoNormal>Thumbs up = automatic embedding is enabled in the users personal settings.<br>
+Thumbs down = automatic embedding is disabled in the users personal settings.
+</p>
+
+<p class=MsoNormal>The center of the table shows a select box with following options: &quot;YES&quot; (enable embedding) and &quot;NO&quot; (disable embedding).</p>
+
+<p class=MsoNormal>The setting is saved after clicking the &quot;Ok&quot; button. </p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_MyCode-Buttons"></a></h3>
+
+<h3>MyCode-Buttons</h3>
+
+<p class=MsoNormal>If the codebuttons for inserting the MyCodes are enabled in the global plugin settings, the buttons are displayed below the editors message text box.</p>
+
+<p class=MsoNormal>With a click on the respective button the MyCode tags are inserted (opening and closing tag simultaneously.)</p>
+
+<p class=MsoNormal>The tags are inserted at the cursor point or - if text is selected - before and after the selected text.</p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Coding"></a></h3>
+
+<h3>Module-Generation</h3>
+
+<p class=MsoNormal>A few tips for creating custom modules:</p>
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>A custom module is a PHP file, which must be located in the correct folder.
+ (&quot;inc/plugins/automedia/mediasites/&quot; or &quot;inc/plugins/automedia/special/&quot;)
+ </li>
+  <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>The module can be activated only, if the function name contains the name of the module.
+  </li>
+  <li class=MsoNormal style='mso-list:l0 level1 lfo7;tab-stops:list 36.0pt'>Here's an example of the code structure:<br><br>
+  The module's file name is: my_module.php<br>
+  Hence the name of the module is: my_module<br>
+  The function name of the module has to be: automedia_my_module($message)<br><br>
+  Code:<br><br>
+  <font color="00BB00">&lt;?php<br>
+  //Direct initialization of this file is not allowed.<br>
+  if(!defined(&quot;IN_MYBB&quot;))<br>
+  {<br>
+&nbsp;die("Direct initialization of this file is not allowed.<br>
+&nbsp;Please make sure IN_MYBB is defined.");<br>
+}<br><br><br>
+//Now the function:<br>
+function automedia_my_module($message)<br>
+{<br>
+&nbsp;// The following variables are required for video width and height:<br>
+&nbsp;global $mybb, $width, $height;<br><br>
+&nbsp;// Determine width and height, but don't forget the global settings:<br>
+&nbsp;$w = $width;<br>
+&nbsp;$h = $height;<br>
+<br>
+&nbsp;// Detect the desired URL<br>
+&nbsp;if (preg_match('SEARCHPATTERNisU',$message))<br>
+&nbsp;{<br>
+&nbsp;// Replace link with the embed code. Don't forget using the &lt;div=&quot;am_embed&quot;&gt; tag and the variables for width and height!<br>
+&nbsp;$message = preg_replace(&quot;#SEARCHPATTERN#i&quot;, &quot;&lt;div class=\&quot;am_embed\&quot;&gt;EMBED-CODE width=$w heigth=$h&lt;/div&gt;&quot;, $message);<br>
+&nbsp;}<br>
+&nbsp;return $message;<br>
+}<br>
+</font>
+  </li>
+</ul>
+
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<h3><a name="_Lizenz"></a></h3>
+
+<h3>License</h3>
+
+<p class=MsoNormal>This program is free software: </p>
+
+<p class=MsoNormal>you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. </p>
+
+<p class=MsoNormal>This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details..</p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal> You should have received a copy of the GNU General Public License
+    along with this program.  If not, see &lt;<a href="http://www.gnu.org/licenses/"
+target="_blank">http://www.gnu.org/licenses/</a>&gt;.<br><br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><a href="#_top">Back to top</a></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal><br></p>
+
+<p class=MsoNormal>Last edited: 02-04-2015</p>
+
+</div>
+</div>
+</body>
+
+</html>

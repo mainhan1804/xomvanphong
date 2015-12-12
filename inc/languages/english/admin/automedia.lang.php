@@ -1,0 +1,91 @@
+<?php
+###################################
+# Plugin AutoMedia for MyBB*#
+# (c) 2009-2014 by doylecc    #
+# Website: http://mybbplugins.de.vu #
+###################################
+
+$l['av_plugin_title'] = "AutoMedia";
+$l['av_plugin_descr'] = "Embeds automatically videos and music from different sites in posts.<br />For more information view <a href=\"../inc/plugins/automedia/automedia_doc_en.html\" target=\"_blank\">documentation</a>.";
+$l['av_unsupported'] = "cURL and fsockopen is not supported on your server! Without it many files CANNOT be embedded. For more information view Readme.txt - \"cURL and fsockopen support.\"";
+$l['av_php_version'] = "PHP Version too old! AutoMedia 3.x requires PHP 5.3.0 or higher.";
+$l['av_group_global_title'] = "AutoMedia Global";
+$l['av_group_global_descr'] = "Global Settings for the AutoMedia Plugin";
+$l['av_enable_title'] = "Enable AutoMedia for \"AutoMedia Sites\"?";
+$l['av_enable_descr'] = "Choose if you want the selected media from \"AutoMedia Sites\" to be shown.";
+$l['av_guest_title'] = "Enable AutoMedia for Guests?";
+$l['av_guest_descr'] = "Choose if you want the selected media to be shown for guests.";
+$l['av_groups_title'] = "Disallow AutoMedia for the following Usergroups:";
+$l['av_groups_descr'] = "Please select the usergroup(s) you wish the selected media not to be shown.";
+$l['av_forums_title'] = "Show AutoMedia in the following Forums:";
+$l['av_forums_descr'] = "Please select the forum(s) you wish to enable AutoMedia in.";
+$l['av_adultsites_title'] = "Enable embedding of Adult Sites?";
+$l['av_adultsites_descr'] = "Choose if you want the adult media to be shown.";
+$l['av_adultguest_title'] = "Enable Adult Site Videos for Guests?";
+$l['av_adultguest_descr'] = "Choose if you want the adult media to be shown for guests.";
+$l['av_adultgroups_title'] = "Allow Adult Site Videos for the following Usergroups:";
+$l['av_adultgroups_descr'] = "Please select the usergroup(s) you wish the adult media to be shown.";
+$l['av_adultforums_title'] = "Allow Adult Site Videos for the following Forums:";
+$l['av_adultforums_descr'] = "Please select the forum(s) you wish the adult media to be shown.";
+$l['av_signature_title'] = "Enable AutoMedia for \"AutoMedia Sites\" in signatures?";
+$l['av_signature_descr'] = "Choose if you want the selected media from \"AutoMedia Sites\" to be shown in signatures.";
+$l['av_flashadmin_title'] = "Permission for embedding of flash files";
+$l['av_flashadmin_descr'] = "Choose, who is allowed to embed FLV and SWF flash files.";
+$l['av_flashadmin_admins'] = "Admins";
+$l['av_flashadmin_mods'] = "Admins, Supermods, Mods";
+$l['av_flashadmin_all'] = "All Users";
+$l['av_width_title'] = "Max. width of embedded media.";
+$l['av_width_descr'] = "Width in pixel, the setting doesn't apply to Embedly-Cards.";
+$l['av_height_title'] = "Max. height of embedded media.";
+$l['av_height_descr'] = "Height in pixel, the setting doesn't apply to Embedly-Cards.";
+$l['av_embera_title'] = "Use Embera (Default)";
+$l['av_embera_descr'] = "Use the Embera oEmbed library with support for more than 65 providers for embedding?";
+$l['av_embedly_title'] = "Use Embedly";
+$l['av_embedly_descr'] = "Use <a href=\"http://embed.ly\" title=\"embed.ly\" target=\"_blank\">embed.ly</a> with support for more than 250 providers? (Embedly and Embera can be used together.)";
+$l['av_embedly_key_title'] = "Embedly API Key";
+$l['av_embedly_key_descr'] = "Enter your <a href=\"http://embed.ly\" title=\"embed.ly\" target=\"_blank\">embed.ly</a> API key.";
+$l['av_embedly_click_title'] = "Embedly - inline embedding";
+$l['av_embedly_click_descr'] = "Display Embedly-media in posts immediately (Embed), after clicking a the button (Button) or as modal popup (Modal Box).";
+$l['av_embedly_click_embed'] = "Embed";
+$l['av_embedly_click_button'] = "Button";
+$l['av_embedly_click_modal'] = "Modal Box";
+$l['av_embedly_links_title'] = "Embedly - embed link preview";
+$l['av_embedly_links_descr'] = "Allow Embedly to embed previews of all linked websites in posts?";
+$l['av_embedly_card_title'] = "Embedly - Embed as Cards";
+$l['av_embedly_card_descr'] = "Embed media as Embedly-Cards?";
+$l['av_codebuttons_title'] = "Show codebuttons for MP3 Playlist and Deactivation MyCodes";
+$l['av_codebuttons_descr'] = "Choose if you want the codebuttons for inserting the MP3 Playlist ([ampl][/ampl]) and Deactivation ([amoff][/amoff]) MyCodes to be shown.";
+$l['av_quote_title'] = "AutoMedia in Quotes?";
+$l['av_quote_descr'] = "Choose if you want the videos to be shown in quoted posts.";
+$l['av_templategroup'] = "AutoMedia Plugin";
+
+$l['automedia'] = "AutoMedia";
+$l['automedia_settings'] = "Plugin settings";
+$l['can_view_automedia'] = "Can view AutoMedia modules";
+$l['automedia_modules'] = "Manage installed custom AutoMedia modules";
+$l['automedia_modules_description1'] = "Shows currently installed and active custom modules.<br /> To remove deactivated custom modules delete the according PHP files in the folder <strong>inc/plugins/automedia/mediasites</strong> via FTP.<br />To add new modules upload the according PHP files into the same folder and activate it here.";
+$l['automedia_modules_description2'] = "Shows currently installed and active custom modules.";
+$l['automedia_adult'] = "Installed Adult Sites modules";
+$l['automedia_adult_description1'] = "Shows currently installed and active adult modules.<br /> To remove deactivated custom modules delete the according PHP files in the folder <strong>inc/plugins/automedia/special</strong> via FTP.<br />To add new modules upload the according PHP files into the same folder and activate it here.";
+$l['automedia_adult_description2'] = "List modules:";
+$l['automedia_modules_options'] = "Options";
+$l['automedia_modules_viewcode'] = "Shows the embed code";
+$l['automedia_modules_showcode'] = "Show code";
+$l['automedia_modules_deleted'] = "Module successful deactivated";
+$l['automedia_modules_active'] = "Module successful activated";
+$l['automedia_modules_notfound'] = "Module not found!";
+$l['automedia_modules_activate'] = "<span style=\"color:#EE0000;\">Activate</span>";
+$l['automedia_modules_activateall'] = "<strong>Activate all</strong>";
+$l['automedia_modules_deactivate'] = "<span style=\"color:#00AA00;\">Deactivate</span>";
+$l['automedia_modules_missing_sitesfolder'] = "<span style=\"color:#EE0000;\">Folder inc/plugins/automedia/<strong>mediasites</strong> doesn't exist!</span>";
+$l['automedia_modules_missing_specialfolder'] = "<span style=\"color:#EE0000;\">Folder inc/plugins/automedia/<strong>special</strong> doesn't exist!</span>";
+$l['automedia_template_edits1'] = "Reapply template edits";
+$l['automedia_template_edits2'] = "(e.g. after reverting your templates)";
+$l['automedia_oembed'] = "AutoMedia oEmbed API";
+$l['automedia_oembed_desc'] = "Active AutoMedia oEmbed Libraries and Services";
+$l['automedia_modules_embera'] = "Embera oEmbed library is installed and activated in <a href=\"index.php?module=config&amp;action=change&amp;search=automedia\" title=\"\" target=\"_blank\">AutoMedia settings</a>. For all supported sites <a href=\"https://github.com/mpratt/Embera/blob/master/PROVIDERS.md\" title=\"Embera\" target=\"_blank\"><b>click here</b></a>.";
+$l['automedia_modules_embedly'] = "Embed.ly oEmbed service is activated in <a href=\"index.php?module=config&amp;action=change&amp;search=automedia\" title=\"\" target=\"_blank\">AutoMedia settings</a> and an API Key is inserted. For all supported providers <a href=\"http://embed.ly/embed/features/providers\" title=\"Embed.ly\" target=\"_blank\"><b>click here</b></a>.";
+$l['automedia_modules_success'] = "Activated";
+$l['automedia_modules_fail'] = "Deactivated";
+$l['automedia_modules_status'] = "Status:";
+$l['automedia_modules_embedcode'] = "Embed Code";
